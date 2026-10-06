@@ -311,6 +311,11 @@ textarea:focus{border-color:rgba(91,157,255,.55);box-shadow:0 0 0 4px rgba(91,15
 /* ═══════ EMPLOYEE LAB ═══════ */
 .employee-lab{display:grid;grid-template-columns:330px 1fr;gap:18px;align-items:start}
 .employee-picker{border:1px solid var(--line);border-radius:28px;background:rgba(255,255,255,.04);padding:15px;display:grid;gap:9px}
+.seniority-label{font:900 10px var(--mono);letter-spacing:1.2px;text-transform:uppercase;color:var(--faint);padding:4px 3px 0}
+.seniority-picker{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:7px}
+.seniority-tab{border:1px solid var(--line);background:rgba(0,0,0,.16);color:var(--muted);border-radius:12px;padding:9px 5px;text-align:center;cursor:pointer;font:800 10px var(--mono);transition:all .3s ease}
+.seniority-tab.active{background:rgba(54,242,161,.12);color:var(--green);border-color:rgba(54,242,161,.36)}
+.seniority-meta{font-size:12px;color:var(--muted);line-height:1.45;padding:3px 3px 7px}
 .employee-tab{border:1px solid var(--line);background:rgba(0,0,0,.16);color:var(--muted);border-radius:17px;padding:13px;text-align:left;cursor:pointer;font-weight:800;transition:all .35s cubic-bezier(.16,1,.3,1)}
 .employee-tab.active{background:linear-gradient(135deg,rgba(91,157,255,.22),rgba(177,99,255,.13));color:white;border-color:rgba(91,157,255,.32)}
 .employee-card{border:1px solid rgba(91,157,255,.28);border-radius:34px;background:radial-gradient(circle at 80% 0%,rgba(91,157,255,.18),transparent 34%),linear-gradient(180deg,rgba(255,255,255,.065),rgba(255,255,255,.026));padding:24px;box-shadow:var(--shadow);min-height:390px}
@@ -1490,12 +1495,24 @@ textarea:focus{border-color:rgba(91,157,255,.55);box-shadow:0 0 0 4px rgba(91,15
   <section id="employees" style="opacity: 0.95;">
     <div class="wrap">
       <div class="section-head" data-reveal="fade-up" style="opacity: 1; visibility: inherit; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
-        <div class="eyebrow" style="translate: none; rotate: none; scale: none; filter: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">Funções ativáveis</div>
+        <div class="eyebrow" style="translate: none; rotate: none; scale: none; filter: none; opacity: 1; visibility: inherit; transform: translate(0px, 0px);">Funções por senioridade</div>
         <h2 data-motion-text="words" aria-label="Veja a primeira função digital que sua empresa pode ativar." data-motion-split="true" style="opacity: 1; visibility: inherit;"><span class="motion-word-mask" style="display: inline-block; overflow: hidden; vertical-align: top;"><span class="motion-word" style="display: inline-block; will-change: transform, opacity, filter; --word-index: 0; translate: none; rotate: none; scale: none; filter: blur(0px); opacity: 1; visibility: inherit; transform: translate(0px, 0px);">Veja</span></span> <span class="motion-word-mask" style="display: inline-block; overflow: hidden; vertical-align: top;"><span class="motion-word" style="display: inline-block; will-change: transform, opacity, filter; --word-index: 1; translate: none; rotate: none; scale: none; filter: blur(0px); opacity: 1; visibility: inherit; transform: translate(0px, 0px);">a</span></span> <span class="motion-word-mask" style="display: inline-block; overflow: hidden; vertical-align: top;"><span class="motion-word" style="display: inline-block; will-change: transform, opacity, filter; --word-index: 2; translate: none; rotate: none; scale: none; filter: blur(0px); opacity: 1; visibility: inherit; transform: translate(0px, 0px);">primeira</span></span> <span class="motion-word-mask" style="display: inline-block; overflow: hidden; vertical-align: top;"><span class="motion-word" style="display: inline-block; will-change: transform, opacity, filter; --word-index: 3; translate: none; rotate: none; scale: none; filter: blur(0px); opacity: 1; visibility: inherit; transform: translate(0px, 0px);">função</span></span> <span class="motion-word-mask" style="display: inline-block; overflow: hidden; vertical-align: top;"><span class="motion-word" style="display: inline-block; will-change: transform, opacity, filter; --word-index: 4; translate: none; rotate: none; scale: none; filter: blur(0px); opacity: 1; visibility: inherit; transform: translate(0px, 0px);">digital</span></span> <span class="motion-word-mask" style="display: inline-block; overflow: hidden; vertical-align: top;"><span class="motion-word" style="display: inline-block; will-change: transform, opacity, filter; --word-index: 5; translate: none; rotate: none; scale: none; filter: blur(0px); opacity: 1; visibility: inherit; transform: translate(0px, 0px);">que</span></span> <span class="motion-word-mask" style="display: inline-block; overflow: hidden; vertical-align: top;"><span class="motion-word" style="display: inline-block; will-change: transform, opacity, filter; --word-index: 6; translate: none; rotate: none; scale: none; filter: blur(0px); opacity: 1; visibility: inherit; transform: translate(0px, 0px);">sua</span></span> <span class="motion-word-mask" style="display: inline-block; overflow: hidden; vertical-align: top;"><span class="motion-word" style="display: inline-block; will-change: transform, opacity, filter; --word-index: 7; translate: none; rotate: none; scale: none; filter: blur(0px); opacity: 1; visibility: inherit; transform: translate(0px, 0px);">empresa</span></span> <span class="motion-word-mask" style="display: inline-block; overflow: hidden; vertical-align: top;"><span class="motion-word" style="display: inline-block; will-change: transform, opacity, filter; --word-index: 8; translate: none; rotate: none; scale: none; filter: blur(0px); opacity: 1; visibility: inherit; transform: translate(0px, 0px);">pode</span></span> <span class="motion-word-mask" style="display: inline-block; overflow: hidden; vertical-align: top;"><span class="motion-word" style="display: inline-block; will-change: transform, opacity, filter; --word-index: 9; translate: none; rotate: none; scale: none; filter: blur(0px); opacity: 1; visibility: inherit; transform: translate(0px, 0px);">ativar.</span></span></h2>
-        <p data-reveal="fade-up" data-reveal-delay="0.15" style="opacity: 1; visibility: inherit; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">Antes de contratar mais gente ou empilhar ferramentas, visualize a missão, os canais, os KPIs e os limites do funcionário digital.</p>
+        <p data-reveal="fade-up" data-reveal-delay="0.15" style="opacity: 1; visibility: inherit; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">O mesmo trabalho pode começar como estagiário, ganhar autonomia como júnior, operar como pleno ou assumir coordenação sênior. Cada nível combina preço, capacidade, supervisão e micro-skills de domínio diferentes.</p>
       </div>
       <div class="employee-lab">
         <div class="employee-picker" data-reveal="slide-right" style="opacity: 1; visibility: inherit; translate: none; rotate: none; scale: none; transform: translate(0px, 0px);">
+          <div class="seniority-label">Escolha o nível do funcionário</div>
+          <div class="seniority-picker" role="group" aria-label="Nível de senioridade">
+            <button class="seniority-tab active" data-level="junior" type="button">Júnior</button>
+            <button class="seniority-tab" data-level="pleno" type="button">Pleno</button>
+            <button class="seniority-tab" data-level="senior" type="button">Sênior</button>
+          </div>
+          <div class="seniority-meta" id="seniorityMeta">Execução assistida · R$ 497/mês · micro-skills essenciais</div>
+          <div class="seniority-picker" role="group" aria-label="Nível de entrada">
+            <button class="seniority-tab" data-level="estagiario" type="button">Estagiário</button>
+            <button class="seniority-tab" data-level="especialista" type="button">Especialista</button>
+            <button class="seniority-tab" data-level="lider" type="button">Líder</button>
+          </div>
           <button class="employee-tab active" data-role="sdr" type="button">Comercial Digital</button>
           <button class="employee-tab" data-role="follow" type="button">Follow-up Inteligente</button>
           <button class="employee-tab" data-role="cal" type="button">Agenda Virtual</button>
@@ -2484,13 +2501,34 @@ const employees = {
   react: { role: "Reativação de Leads", mission: "Reativa leads frios e dormientes com campanhas personalizadas que recuperam pipeline.", tools: "CRM (segmentation), WhatsApp API, Email API, Analytics Dashboard.", memory: "Segmentos de leads, campanhas testadas, taxas de resposta, motivos de inatividade.", kpis: "Leads reativados/mês, pipeline recuperado, taxa de resposta.", auto: "80%" },
   orch: { role: "Orquestrador", mission: "Coordena múltiplos agentes Endyx: roteia tarefas, resolve conflitos e mantém contexto entre especialistas.", tools: "Internal agent APIs, CRM (shared context), Rules engine, Monitoring dashboard.", memory: "Regras de roteamento, conflitos resolvidos, padrões de execução cross-agent, fallbacks.", kpis: "Cross-agent efficiency, end-to-end conversion rate, reduction in manual coordination.", auto: "90%" },
 };
+const seniority = {
+  estagiario: { label: "Estagiário", price: "R$ 297/mês", autonomy: "40%", capability: "Executa micro-skills essenciais com supervisão próxima.", skills: "checklists, classificação, coleta e preparação", supervision: "revisão humana em cada entrega" },
+  junior: { label: "Júnior", price: "R$ 497/mês", autonomy: "60%", capability: "Executa rotinas conhecidas e aprende com feedback.", skills: "execução multicanal, follow-up e registro", supervision: "amostragem e aprovação por exceção" },
+  pleno: { label: "Pleno", price: "R$ 997/mês", autonomy: "80%", capability: "Resolve variações da rotina com julgamento operacional.", skills: "priorização, diagnóstico e adaptação por domínio", supervision: "gestão por KPI e alertas" },
+  senior: { label: "Sênior", price: "R$ 1.997/mês", autonomy: "90%", capability: "Coordena casos complexos e melhora o playbook.", skills: "decisão, otimização e micro-skills avançadas", supervision: "governança e revisão de resultado" },
+  especialista: { label: "Especialista", price: "R$ 3.497/mês", autonomy: "94%", capability: "Opera um domínio profundo com memória especializada.", skills: "políticas, exceções e conhecimento vertical", supervision: "auditoria por evidência" },
+  lider: { label: "Líder", price: "R$ 4.997/mês", autonomy: "97%", capability: "Orquestra funções e distribui trabalho entre agentes.", skills: "coordenação, roteamento e gestão cross-domain", supervision: "governança executiva" }
+};
+let selectedSeniority = "junior";
+const seniorityHeading = document.querySelector('#employees h2');
+if (seniorityHeading) { seniorityHeading.textContent = 'Escolha a senioridade do seu funcionário digital.'; seniorityHeading.setAttribute('aria-label', seniorityHeading.textContent); }
+function updateSeniority(level) {
+  selectedSeniority = level;
+  const s = seniority[level] || seniority.junior;
+  $$(".seniority-tab").forEach((b) => b.classList.toggle("active", b.dataset.level === level));
+  const meta = $("#seniorityMeta");
+  if (meta) meta.textContent = `${s.capability} · ${s.price} · ${s.skills}`;
+  renderEmployee($(".employee-tab.active")?.dataset.role || "sdr");
+}
+$$('.seniority-tab').forEach((btn) => btn.addEventListener('click', () => updateSeniority(btn.dataset.level)));
 function renderEmployee(key = "sdr") {
   const e = employees[key];
+  const s = seniority[selectedSeniority] || seniority.junior;
   const card = $("#employeeCard");
   if (!card) return;
-  card.innerHTML = `<div class="role">Digital Employee Passport</div><h3>${e.role}</h3>
-    <div class="spec-grid"><div class="spec"><b>Missão</b><span>${e.mission}</span></div><div class="spec"><b>Ferramentas</b><span>${e.tools}</span></div><div class="spec"><b>Memória</b><span>${e.memory}</span></div><div class="spec"><b>KPIs</b><span>${e.kpis}</span></div></div>
-    <div class="autonomy"><b>Nível de autonomia supervisionada</b><div class="autonomy-track"><i style="width:${e.auto}"></i></div></div>`;
+  card.innerHTML = `<div class="role">${s.label} · Digital Employee Passport</div><h3>${e.role}</h3>
+    <div class="spec-grid"><div class="spec"><b>Capacidade</b><span>${s.capability}</span></div><div class="spec"><b>Micro-skills</b><span>${s.skills}</span></div><div class="spec"><b>Missão</b><span>${e.mission}</span></div><div class="spec"><b>Ferramentas</b><span>${e.tools}</span></div><div class="spec"><b>KPIs</b><span>${e.kpis}</span></div><div class="spec"><b>Supervisão</b><span>${s.supervision}</span></div></div>
+    <div class="autonomy"><b>${s.label} · ${s.price} · autonomia supervisionada</b><div class="autonomy-track"><i style="width:${s.autonomy}"></i></div></div>`;
   if (!reduceMotion) {
     gsap.from(card.children, { y: 16, autoAlpha: 0, stagger: 0.06, duration: 0.45, ease: "power3.out" });
     initAutonomyBar();
